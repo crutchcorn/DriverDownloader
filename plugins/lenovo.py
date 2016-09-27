@@ -1,9 +1,9 @@
 import urllib.request
 import re
 import ast
+from sys import exit
 
-def getDriverList():
-    url = "http://support.lenovo.com/us/en/products/Desktops-and-all-in-ones/300-Series/300-20ish?tabName=Downloads&linkTrack=Mast:SubNav:Support:Drivers%20and%20Software|Drivers%20and%20Software&beta=false"
+def getDriverList(url):
     opened = urllib.request.urlopen(url)
 
     listo = []
