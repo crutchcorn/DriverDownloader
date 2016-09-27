@@ -1,8 +1,10 @@
 # Driver Downloader
 
 ## Installation
-`pip install requirements.txt`
-`python setup.py install`
+```bash
+pip install requirements.txt
+python setup.py install
+```
 
 ## Usage
 THIS SECTION IS TO COME. THIS REPOSITORY IS NOT READY YET - COME BACK LATER
@@ -19,7 +21,9 @@ THIS SECTION IS TO COME. THIS REPOSITORY IS NOT READY YET - COME BACK LATER
 ### Python Regex Implamentability
 
 `.*there` => ``$& Corbin`
+
 `==`
+
 `re.sub(r'.*there', r'\g<0>, Corbin', "Hi there, how are you?")`
 
 You’re putting an capture group around everything, and then using `\g<0>` which is Python’s syntax for `$1` in the things that you’re more used to to put it in.
@@ -37,13 +41,13 @@ http://stackoverflow.com/questions/tagged/regex
 
 Now, if I apply the regex below over it...
 
-```python
+```
 (http|ftp)://([^/\r\n]+)(/[^\r\n]*)?
 ```
 
 ... I would get the following result:
 
-```python
+```
 Match "http://stackoverflow.com/"
      Group 1: "http"
      Group 2: "stackoverflow.com"
@@ -57,13 +61,13 @@ Match "http://stackoverflow.com/questions/tagged/regex"
 
 But I don't care about the protocol -- I just want the host and path of the URL. So, I change the regex to include the non-capturing group `(?:)`.
 
-```python
+```
 (?:http|ftp)://([^/\r\n]+)(/[^\r\n]*)?
 ```
 
 Now, my result looks like this:
 
-```python
+```
 Match "http://stackoverflow.com/"
      Group 1: "stackoverflow.com"
      Group 2: "/"
@@ -100,14 +104,16 @@ _[Stright from Python 3 documentation](https://docs.python.org/3/library/re.html
 
 # TODO
 - [ ] Better error handling for `wget` function
-- [ ] Proper requirements.txt
+- [ ] Properly document Plugin system
+- [x] Proper requirements.txt
 - [ ] Option to delete or rename existing file
 - [ ] Continue to add "ALT" until no longer possible
 - [ ] Add option to rename duplications manually
 - [ ] Use docopt for command line functionality
-- [ ] Implament plugin support (Lenovo plugin already grabs `drivers[]` properly)
+- [x] Implament plugin support (Lenovo plugin already grabs `drivers[]` properly)
 - [ ] Fix strings with `,` in the name (in Lenovo plugin)
 - [ ] Pass arguments (URL, namely) to plugin
 - [ ] Automatically parse URL argument and run respective plugin
 - [ ] Handle many downloads of drivers
 - [ ] Split off different instances of driver downloads to proper directory tree
+- [ ] Turn all regex stuff into some sort of library for easy lifting for others
