@@ -117,3 +117,5 @@ _[Stright from Python 3 documentation](https://docs.python.org/3/library/re.html
 - [ ] Handle many downloads of drivers
 - [ ] Split off different instances of driver downloads to proper directory tree
 - [ ] Turn all regex stuff into some sort of library for easy lifting for others
+- [ ] Add architechture support for driverpacksolution plugin
+- [ ] Have wget not rename files if no "Name" is presented
