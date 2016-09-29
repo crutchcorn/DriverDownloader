@@ -3,7 +3,10 @@ import re
 import ast
 from sys import exit
 
-def getDriverList(url):
+def getExt():
+    return ["lenovo"]
+
+def handleExt(url):
     opened = urllib.request.urlopen(url)
 
     listo = []
@@ -21,9 +24,9 @@ def getDriverList(url):
     drivers = []
     for items in listo:
         if not '\"' in items[-2:][0][-1:]:
-        	item2 = items[-2:][0] + '\"' # Kludge for any string that have `,` in `"Name"`
+            item2 = items[-2:][0] + '\"' # Kludge for any string that have `,` in `"Name"`
         else:
-        	item2 = items[-2:][0]
+            item2 = items[-2:][0]
         drivers.append(ast.literal_eval("{" + item2 + ", " + items[len(items)-2:][1] + "}"))
 
     return drivers

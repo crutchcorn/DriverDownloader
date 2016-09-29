@@ -10,6 +10,9 @@ setup(
     install_requires=["DriverDownloader>=0.0.1"],
     entry_points="""
         [driverdl.plugin]
-        lenovo=plugins.lenovo:getDriverList
+        lenovoHandle=plugins.lenovo:handleExt
+        lenovoExt=plugins.lenovo:getExt
+        driverpackHandle=plugins.driverpacksolution:handleExt
+        driverpackExt=plugins.driverpacksolution:getExt
     """,
 )
