@@ -16,7 +16,7 @@ from wget import download
 from re import sub
 from uniprez import getExtensions
 
-arguments = docopt(__doc__, version='DriverDownloader 0.0.1')
+arguments = docopt(__doc__, version='DriverDownloader 0.1')
 
 group = "driverdl.plugin"
 extensions = getExtensions(group)
