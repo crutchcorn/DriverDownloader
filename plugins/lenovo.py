@@ -3,8 +3,11 @@ import re
 import ast
 from sys import exit
 
-def getExt():
-    return ["lenovo"]
+def getExt(handler = None):
+    if handler:
+        return "handleExt"
+    else:
+        return ["lenovo"]
 
 def handleExt(url):
     opened = urllib.request.urlopen(url)

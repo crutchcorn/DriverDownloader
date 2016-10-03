@@ -4,8 +4,11 @@ import ast
 from sys import exit
 import codecs
 
-def getExt():
-    return ["drp"]
+def getExt(handler = None):
+    if handler:
+        return "handleExt"
+    else:
+        return ["drp"]
 
 def handleExt(url):
     opened = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
